@@ -203,7 +203,7 @@ static int register_leds (struct platform_device* pdev,
         snprintf (intensity_property_name, sizeof(intensity_property_name), "led-%d-intensity", i);
         if (of_property_read_u8_array(dev->of_node, intensity_property_name, intensity, 3)) {
             // Use default color intensity values
-            intensity[0] = intensity[1] = intensity[2] = 0;
+            intensity[0] = intensity[1] = intensity[2] = 0x5;
         }
         mc_led_info[0].intensity = intensity[0];
         mc_led_info[1].intensity = intensity[1];
