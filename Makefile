@@ -1,5 +1,5 @@
 
-LINUX_SRC ?= /lib/modules/$(shell uname -r)
+LINUX_SRC ?= /lib/modules/$(shell uname -r)/build
 
 PWD := $(shell pwd)
 
