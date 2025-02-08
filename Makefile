@@ -4,7 +4,9 @@ LINUX_SRC ?= /lib/modules/$(shell uname -r)/build
 PWD := $(shell pwd)
 
 # Devicetree overlay to be built
+ifneq ($(SKIP_OVERLAY),1)
 dtb-y += blinkt.dtbo
+endif
 
 # Kernel module to be built
 obj-m := blinkt.o
