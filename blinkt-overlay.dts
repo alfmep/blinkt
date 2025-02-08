@@ -10,74 +10,74 @@
 			blinkt_leds: blinkt_leds {
 				compatible = "pimoroni,blinkt";
 				status = "okay";
-				led-clk-gpios = <&gpio 24 0>;
-				led-dat-gpios = <&gpio 23 0>;
-				led-name-prefix = "blinkt";
-				led-0-intensity = /bits/ 8 <0x5 0x5 0x5>; // r g b
-				led-1-intensity = /bits/ 8 <0x5 0x5 0x5>;
-				led-2-intensity = /bits/ 8 <0x5 0x5 0x5>;
-				led-3-intensity = /bits/ 8 <0x5 0x5 0x5>;
-				led-4-intensity = /bits/ 8 <0x5 0x5 0x5>;
-				led-5-intensity = /bits/ 8 <0x5 0x5 0x5>;
-				led-6-intensity = /bits/ 8 <0x5 0x5 0x5>;
-				led-7-intensity = /bits/ 8 <0x5 0x5 0x5>;
-				led-0-trigger = "none";
-				led-1-trigger = "none";
-				led-2-trigger = "none";
-				led-3-trigger = "none";
-				led-4-trigger = "none";
-				led-5-trigger = "none";
-				led-6-trigger = "none";
-				led-7-trigger = "none";
+				blinkt-clk-gpios = <&gpio 24 0>;
+				blinkt-dat-gpios = <&gpio 23 0>;
+				blinkt-name-prefix = "blinkt";
+				blinkt-0-rgb = /bits/ 8 <0x0 0x0 0x0>; /* red, green, blue */
+				blinkt-1-rgb = /bits/ 8 <0x0 0x0 0x0>;
+				blinkt-2-rgb = /bits/ 8 <0x0 0x0 0x0>;
+				blinkt-3-rgb = /bits/ 8 <0x0 0x0 0x0>;
+				blinkt-4-rgb = /bits/ 8 <0x0 0x0 0x0>;
+				blinkt-5-rgb = /bits/ 8 <0x0 0x0 0x0>;
+				blinkt-6-rgb = /bits/ 8 <0x0 0x0 0x0>;
+				blinkt-7-rgb = /bits/ 8 <0x0 0x0 0x0>;
+				blinkt-0-trigger = "none";
+				blinkt-1-trigger = "none";
+				blinkt-2-trigger = "none";
+				blinkt-3-trigger = "none";
+				blinkt-4-trigger = "none";
+				blinkt-5-trigger = "none";
+				blinkt-6-trigger = "none";
+				blinkt-7-trigger = "none";
 			};
 		};
 	};
 
 	__overrides__ {
-		prefix = <&blinkt_leds>,"led-name-prefix";
+		prefix = <&blinkt_leds>,"blinkt-name-prefix";
 
-		clk_pin = <&blinkt_leds>,"led-clk-gpios:4";
-		dat_pin = <&blinkt_leds>,"led-dat-gpios:4";
+		clk_pin = <&blinkt_leds>,"blinkt-clk-gpios:4";
+		dat_pin = <&blinkt_leds>,"blinkt-dat-gpios:4";
 
-		t0 = <&blinkt_leds>,"led-0-trigger";
-		t1 = <&blinkt_leds>,"led-1-trigger";
-		t2 = <&blinkt_leds>,"led-2-trigger";
-		t3 = <&blinkt_leds>,"led-3-trigger";
-		t4 = <&blinkt_leds>,"led-4-trigger";
-		t5 = <&blinkt_leds>,"led-5-trigger";
-		t6 = <&blinkt_leds>,"led-6-trigger";
-		t7 = <&blinkt_leds>,"led-7-trigger";
+		t0 = <&blinkt_leds>,"blinkt-0-trigger";
+		t1 = <&blinkt_leds>,"blinkt-1-trigger";
+		t2 = <&blinkt_leds>,"blinkt-2-trigger";
+		t3 = <&blinkt_leds>,"blinkt-3-trigger";
+		t4 = <&blinkt_leds>,"blinkt-4-trigger";
+		t5 = <&blinkt_leds>,"blinkt-5-trigger";
+		t6 = <&blinkt_leds>,"blinkt-6-trigger";
+		t7 = <&blinkt_leds>,"blinkt-7-trigger";
 
-		r0 = <&blinkt_leds>,"led-0-intensity.0";
-		g0 = <&blinkt_leds>,"led-0-intensity.1";
-		b0 = <&blinkt_leds>,"led-0-intensity.2";
+		r0 = <&blinkt_leds>,"blinkt-0-rgb.0";  /* reg */
+		g0 = <&blinkt_leds>,"blinkt-0-rgb.1";  /* green */
+		b0 = <&blinkt_leds>,"blinkt-0-rgb.2";  /* blue */
 
-		r1 = <&blinkt_leds>,"led-1-intensity.0";
-		g1 = <&blinkt_leds>,"led-1-intensity.1";
-		b1 = <&blinkt_leds>,"led-1-intensity.2";
+		r1 = <&blinkt_leds>,"blinkt-1-rgb.0";
+		g1 = <&blinkt_leds>,"blinkt-1-rgb.1";
+		b1 = <&blinkt_leds>,"blinkt-1-rgb.2";
 
-		r2 = <&blinkt_leds>,"led-2-intensity.0";
-		g2 = <&blinkt_leds>,"led-2-intensity.1";
-		b2 = <&blinkt_leds>,"led-2-intensity.2";
+		r2 = <&blinkt_leds>,"blinkt-2-rgb.0";
+		g2 = <&blinkt_leds>,"blinkt-2-rgb.1";
+		b2 = <&blinkt_leds>,"blinkt-2-rgb.2";
 
-		r3 = <&blinkt_leds>,"led-3-intensity.0";
-		g3 = <&blinkt_leds>,"led-3-intensity.1";
-		b3 = <&blinkt_leds>,"led-3-intensity.2";
+		r3 = <&blinkt_leds>,"blinkt-3-rgb.0";
+		g3 = <&blinkt_leds>,"blinkt-3-rgb.1";
+		b3 = <&blinkt_leds>,"blinkt-3-rgb.2";
 
-		r4 = <&blinkt_leds>,"led-4-intensity.0";
-		g4 = <&blinkt_leds>,"led-4-intensity.1";
-		b4 = <&blinkt_leds>,"led-4-intensity.2";
+		r4 = <&blinkt_leds>,"blinkt-4-rgb.0";
+		g4 = <&blinkt_leds>,"blinkt-4-rgb.1";
+		b4 = <&blinkt_leds>,"blinkt-4-rgb.2";
 
-		r5 = <&blinkt_leds>,"led-5-intensity.0";
-		g5 = <&blinkt_leds>,"led-5-intensity.1";
-		b5 = <&blinkt_leds>,"led-5-intensity.2";
+		r5 = <&blinkt_leds>,"blinkt-5-rgb.0";
+		g5 = <&blinkt_leds>,"blinkt-5-rgb.1";
+		b5 = <&blinkt_leds>,"blinkt-5-rgb.2";
 
-		r6 = <&blinkt_leds>,"led-6-intensity.0";
-		g6 = <&blinkt_leds>,"led-6-intensity.1";
-		b6 = <&blinkt_leds>,"led-6-intensity.2";
+		r6 = <&blinkt_leds>,"blinkt-6-rgb.0";
+		g6 = <&blinkt_leds>,"blinkt-6-rgb.1";
+		b6 = <&blinkt_leds>,"blinkt-6-rgb.2";
 
-		r7 = <&blinkt_leds>,"led-7-intensity.0";
-		g7 = <&blinkt_leds>,"led-7-intensity.1";
-		b7 = <&blinkt_leds>,"led-7-intensity.2";
+		r7 = <&blinkt_leds>,"blinkt-7-rgb.0";
+		g7 = <&blinkt_leds>,"blinkt-7-rgb.1";
+		b7 = <&blinkt_leds>,"blinkt-7-rgb.2";
 	};
 };
